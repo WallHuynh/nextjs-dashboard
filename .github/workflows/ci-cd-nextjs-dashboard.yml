@@ -21,11 +21,14 @@ jobs:
         with:
           node-version: "v20.15.0"
 
+      - name: Install pnpm
+        run: npm install -g pnpm
+
       - name: Install dependencies
-        run: npm install
+        run: pnpm i
 
       - name: Build Next.js
-        run: npm run build
+        run: pnpm build
 
       - name: Upload build artifacts
         if: success()
